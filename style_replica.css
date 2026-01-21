@@ -1,0 +1,248 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --sidebar-bg: #f9f9f9;
+  --sidebar-text: #555;
+  --link-color: #1a1a1a;
+  --accent-color: #000;
+  --font-sans: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-serif: "Crimson Pro", "Songti SC", serif;
+  --max-width: 700px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #111;
+    --text-color: #e0e0e0;
+    --sidebar-bg: #1a1a1a;
+    --sidebar-text: #aaa;
+    --link-color: #ccc;
+    --accent-color: #fff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+/* Layout: Sidebar + Main */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styling (High Agency Style) */
+.sidebar {
+  width: 280px;
+  background-color: var(--bg-color); /* Original site has white sidebar too, but let's keep it clean */
+  padding: 40px 20px;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.toc-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.toc-item {
+  margin-bottom: 12px;
+}
+
+.toc-link {
+  text-decoration: none;
+  color: var(--sidebar-text);
+  display: block;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+
+.toc-link:hover {
+  color: var(--accent-color);
+}
+
+.toc-link.active {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.toc-sub {
+  margin-left: 15px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  border-left: 1px solid rgba(0,0,0,0.1);
+  padding-left: 10px;
+}
+
+/* Main Content Styling */
+.main-content {
+  flex: 1;
+  margin-left: 280px; /* Width of sidebar */
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.article-container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+/* Typography matching High Agency */
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 20px 0;
+  display: block;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 2em 0;
+  padding-left: 20px;
+  border-left: 4px solid var(--accent-color);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-color);
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1.5em;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* English Content (Hidden/Toggle) */
+.english-content {
+  display: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95em;
+  color: #666;
+  background: rgba(0,0,0,0.02);
+  padding: 10px 15px;
+  border-left: 3px solid #ccc;
+  margin-bottom: 10px;
+  margin-top: -10px; /* Pull closer to the paragraph above if inserted after? No, we insert before. */
+}
+
+h1.english-content, h2.english-content, h3.english-content {
+    background: none;
+    border-left: none;
+    padding: 0;
+    color: #999;
+    font-size: 0.8em;
+    margin-bottom: 0;
+    margin-top: 2em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+body.show-english .english-content {
+  display: block;
+}
+
+/* Toggle Switch Fixed Top Right */
+.toggle-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 1000;
+  background: var(--bg-color);
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 8px 16px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile/tablet for simplicity, or make it a drawer */
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  h1 { font-size: 2.2rem; }
+}
