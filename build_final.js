@@ -136,7 +136,7 @@ async function buildFinal() {
 
             // Add active class to current link
             const id = entry.target.getAttribute('id');
-            const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+            const activeLink = document.querySelector(\`.toc-link[href="#\${id}"]\`);
             if (activeLink) {
               activeLink.classList.add('active');
 
