@@ -68,6 +68,7 @@ body {
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top center; /* Ensure head is not cut off */
 }
 
 .toc-title {

@@ -56,7 +56,7 @@ async function buildFinal() {
     let sidebarHtml = `
       <div class="sidebar">
         <div class="logo-area">
-          <img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67891452634f936deafd7231_4ki_Rww2_400x400.avif" class="logo-img" alt="Logo">
+          <img src="./avatar_small.png" class="logo-img" alt="Logo">
           <span>HighAgency.cn</span>
         </div>
         <div class="toc-title">目录</div>
