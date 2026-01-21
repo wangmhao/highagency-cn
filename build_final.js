@@ -187,6 +187,15 @@ async function buildFinal() {
     }
   </style>
   <script src="./pangu.min.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bf1e0d7ddcdc3ed5e2ab7ac476235247";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </head>
 <body>
 
