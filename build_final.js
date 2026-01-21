@@ -126,6 +126,33 @@ async function buildFinal() {
           }
         });
       });
+
+      // ScrollSpy Implementation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Remove active class from all links
+            document.querySelectorAll('.toc-link').forEach(link => link.classList.remove('active'));
+
+            // Add active class to current link
+            const id = entry.target.getAttribute('id');
+            const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+            if (activeLink) {
+              activeLink.classList.add('active');
+
+              // Optional: Scroll sidebar to keep active link in view
+              activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+          }
+        });
+      }, {
+        rootMargin: '-100px 0px -60% 0px' // Adjust sensing area to top of screen
+      });
+
+      // Observe all headers
+      document.querySelectorAll('h1[id], h2[id], h3[id]').forEach(header => {
+        observer.observe(header);
+      });
     });
   </script>
 </body>
