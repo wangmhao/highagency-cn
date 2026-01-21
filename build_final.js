@@ -155,6 +155,29 @@ async function buildFinal() {
       transition: width 0.1s;
     }
 
+    /* Justify text for better Chinese typography */
+    p {
+        text-align: justify;
+    }
+
+    /* Share Button */
+    .share-btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 10px 20px;
+        background-color: #f5f5f5;
+        color: #333;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.2s;
+        border: 1px solid #ddd;
+    }
+    .share-btn:hover {
+        background-color: #eee;
+        border-color: #ccc;
+    }
+
     /* Responsive adjustments for progress bar */
     @media (max-width: 900px) {
       .progress-container {
@@ -163,7 +186,7 @@ async function buildFinal() {
       }
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
+  <script src="./pangu.min.js"></script>
 </head>
 <body>
 
@@ -177,7 +200,15 @@ async function buildFinal() {
     <div class="main-content">
       <div class="article-container">
         ${processedContent}
-        <footer style="margin-top:60px; padding-top:20px; border-top:1px solid #eee; color:#888; font-size:0.9em;">
+
+        <!-- Share Section -->
+        <div style="text-align: center; margin: 60px 0 20px;">
+            <div class="share-btn" onclick="copyShareText()">
+                📤 分享给朋友 (复制链接)
+            </div>
+        </div>
+
+        <footer style="margin-top:20px; padding-top:20px; border-top:1px solid #eee; color:#888; font-size:0.9em;">
            <p>Original by <a href="https://highagency.com">HighAgency.com</a> | Translated for <a href="https://highagency.cn">HighAgency.cn</a></p>
         </footer>
       </div>
@@ -234,6 +265,22 @@ async function buildFinal() {
         document.getElementById("progressBar").style.width = scrolled + "%";
       });
     });
+
+    // Copy Share Function
+    function copyShareText() {
+        const text = "强烈推荐阅读《High Agency: 高能动性》\\n\\n这可能是21世纪最重要的思想：不仅被动体验世界，更能主动重塑世界。\\n\\n中文精译版：https://highagency.cn";
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('.share-btn');
+            const originalText = btn.innerText;
+            btn.innerText = "✅ 已复制，快去分享吧！";
+            setTimeout(() => {
+                btn.innerText = originalText;
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+            alert('复制失败，请手动复制链接');
+        });
+    }
   </script>
 </body>
 </html>`;
