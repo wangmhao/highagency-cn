@@ -172,11 +172,19 @@ img {
 /* Blockquotes */
 blockquote {
   margin: 2em 0;
-  padding-left: 20px;
+  padding: 1.2em 20px;
   border-left: 4px solid var(--accent-color);
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--text-color);
+  background-color: #f7f7f7; /* Light background for distinction */
+  font-size: 1.05rem;
+  font-style: normal; /* Chinese italics can be hard to read, regular is often better */
+  color: #666; /* Gray text as requested */
+  border-radius: 0 8px 8px 0;
+}
+
+/* Make bold text stand out more to break monotony */
+strong {
+  color: #000;
+  font-weight: 700;
 }
 
 /* Lists */
@@ -186,7 +194,8 @@ ul, ol {
 }
 
 li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.8em; /* Increased spacing between list items */
+  line-height: 1.7;
 }
 
 /* English Content (Hidden/Toggle) */
