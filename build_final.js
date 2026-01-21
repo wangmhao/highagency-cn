@@ -187,6 +187,7 @@ async function buildFinal() {
     }
   </style>
   <script src="./pangu.min.js"></script>
+  <!-- Baidu Tongji -->
   <script>
     var _hmt = _hmt || [];
     (function() {
@@ -195,6 +196,15 @@ async function buildFinal() {
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
+  </script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRY720D2VM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZRY720D2VM');
   </script>
 </head>
 <body>
