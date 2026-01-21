@@ -254,6 +254,8 @@ body.show-english .english-content {
   h1 { font-size: 2.2rem; }
 }
 
+
+    /* Embed Placeholders */
     .video-placeholder, .social-placeholder {
       display: inline-block;
       background: #f5f5f5;
@@ -265,46 +267,14 @@ body.show-english .english-content {
       cursor: pointer;
       margin: 0 4px;
     }
-    .english-content {
-      display: none;
-      color: #888;
-      font-family: "Inter", sans-serif;
+    .video-placeholder:hover, .social-placeholder:hover {
+      background: #eee;
+      color: #333;
     }
-    .header-en {
-        margin-bottom: 5px !important;
-        margin-top: 2em !important;
-        border-bottom: none !important;
-        font-size: 0.8em !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    body.show-english .english-content {
-        display: block;
-    }
-    /* Toggle Switch */
-    .toggle-wrapper {
-        position: fixed; top: 20px; right: 30px; z-index: 1000;
-        background: var(--bg-color); border: 1px solid rgba(0,0,0,0.1);
-        padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
-    .switch input { opacity: 0; width: 0; height: 0; }
-    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 20px; }
-    .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%; }
-    input:checked + .slider { background-color: #000; }
-    input:checked + .slider:before { transform: translateX(20px); }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
 </head>
 <body>
-  <div class="toggle-wrapper" onclick="toggleEnglish()">
-    <span style="font-size: 0.8rem; font-weight: 600;">EN / 中文</span>
-    <label class="switch">
-      <input type="checkbox" id="englishToggle">
-      <span class="slider"></span>
-    </label>
-  </div>
 
   <div class="layout">
     
@@ -318,12 +288,12 @@ body.show-english .english-content {
     <li class="toc-item"><a href="#section-0" class="toc-link">高能动性：是什么，如何获得，以及为什么重要</a></li><li class="toc-item"><a href="#section-1" class="toc-link">零.什么是高能动性？</a></li><li class="toc-item"><a href="#section-2" class="toc-link">一个问题，看清“高能动性”</a></li><li class="toc-item"><a href="#section-3" class="toc-link">一图看懂“高能动性”</a></li><li class="toc-item"><a href="#section-4" class="toc-link">高能动性：定格的瞬间</a></li><li class="toc-item"><a href="#section-5" class="toc-link">一个瞬间，暴露“低能动性”</a></li><li class="toc-item"><a href="#section-6" class="toc-link">如何识别高能动性的人</a></li><li class="toc-item"><a href="#section-7" class="toc-link">高能动性光谱</a></li><li class="toc-item"><a href="#section-8" class="toc-link">你，拥有能动性吗？</a></li><li class="toc-item"><a href="#section-10" class="toc-link">一、高能动性的“心智软件”</a></li><li class="toc-item"><a href="#section-11" class="toc-link">1. 世上无难事</a></li><li class="toc-item"><a href="#section-12" class="toc-link">2. 法无定法</a></li><li class="toc-item"><a href="#section-13" class="toc-link">3. 没有“大人”</a></li><li class="toc-item"><a href="#section-14" class="toc-link">4. 没有“正常”</a></li><li class="toc-item"><a href="#section-15" class="toc-link">5. 唯有当下</a></li><li class="toc-item"><a href="#section-16" class="toc-link">二、史上能动性最高的人？</a></li><li class="toc-item"><a href="#section-17" class="toc-link">第1个问题1: 缺乏理想的试飞环境</a></li><li class="toc-item"><a href="#section-18" class="toc-link">第2个问题: 横亘在前的700英里</a></li><li class="toc-item"><a href="#section-19" class="toc-link">第3个问题: 如何实现空中操控</a></li><li class="toc-item"><a href="#section-20" class="toc-link">第4个问题：缺乏轻便的动力源</a></li><li class="toc-item"><a href="#section-21" class="toc-link">三、逃离低能动性陷阱</a></li><li class="toc-item"><a href="#section-22" class="toc-link">1. 目标混沌陷阱</a></li><li class="toc-item"><a href="#section-23" class="toc-link">2. 中智”陷阱</a></li><li class="toc-item"><a href="#section-24" class="toc-link">3. 执念”陷阱</a></li><li class="toc-item"><a href="#section-25" class="toc-link">4. 精神内耗”陷阱</a></li><li class="toc-item"><a href="#section-26" class="toc-link">5. 望而生畏”陷阱</a></li><li class="toc-item"><a href="#section-27" class="toc-link">四、化吹牛为真实</a></li><li class="toc-item"><a href="#section-28" class="toc-link">1. 化吹牛为真实练习</a></li><li class="toc-item"><a href="#section-29" class="toc-link">工具1 高能动性流程图</a></li><li class="toc-item"><a href="#section-30" class="toc-link">工具2 瑞典浩室黑手党法则</a></li><li class="toc-item"><a href="#section-31" class="toc-link">工具3 故事法则</a></li><li class="toc-item"><a href="#section-32" class="toc-link">工具4 寻求帮助</a></li><li class="toc-item"><a href="#section-33" class="toc-link">工具5 换个角度看问题，智商暴涨50点</a></li><li class="toc-item"><a href="#section-34" class="toc-link">（全文完）请记住：唯有当下。</a></li><li class="toc-item"><a href="#section-35" class="toc-link">附录：高能动性图书馆</a></li><li class="toc-item"><a href="#section-36" class="toc-link">1. 卡车司机与复印机</a></li><li class="toc-item"><a href="#section-37" class="toc-link">2. 一个看巴菲特视频的6岁好奇男孩</a></li><li class="toc-item"><a href="#section-38" class="toc-link">3. 瘾君子般的行动力</a></li><li class="toc-item"><a href="#section-39" class="toc-link">4. 你闻所未闻的能动性传奇</a></li><li class="toc-item"><a href="#section-40" class="toc-link">5. 凝视儿童海报，为宇宙重新命名</a></li><li class="toc-item"><a href="#section-41" class="toc-link">6. 从沙漠死囚到UFC冠军</a></li><li class="toc-item"><a href="#section-42" class="toc-link">7. 一段视频，看懂“高能动性”</a></li><li class="toc-item"><a href="#section-43" class="toc-link">8. 一段视频，看懂“低能动性”</a></li><li class="toc-item"><a href="#section-44" class="toc-link">致谢</a></li><li class="toc-item"><a href="#section-45" class="toc-link">Changelog</a></li></ul></div>
     <div class="main-content">
       <div class="article-container">
-        <h1 class="english-content header-en">High Agency: What It Is, How to Get It, and Why It Matters</h1><h1 id="section-0">高能动性：是什么，如何获得，以及为什么重要</h1>
+        <h1 id="section-0">高能动性：是什么，如何获得，以及为什么重要</h1>
 <blockquote>
 <p><strong>请注意</strong>：这不是那种让你在<strong>无尽刷屏中陷入精神内耗</strong>的文章。它所分享的理念，简单却无比强大，甚至可能重塑你对世界的看法。</p>
 <p>阅读全文平均需要30分钟。</p>
 </blockquote>
-<h1 class="english-content header-en">What is high agency?</h1><h1 id="section-1">零.什么是高能动性？</h1>
+<h1 id="section-1">零.什么是高能动性？</h1>
 <p>我相信，“高能动性”<code>[1]</code>或许是21世纪最重要的思想。当我第一次了解到它时，感觉就像是<strong>拿到了一本不传于世的人生通关秘籍</strong>，而此前我一直被蒙在鼓里。</p>
 <blockquote>
 <p><strong>【译者注1：能动性】</strong></p>
@@ -336,7 +306,7 @@ body.show-english .english-content {
 <blockquote>
 <p>【译者注2】《情人们》(The Lovers, 法语: Les Amants)是1958年由法国导演路易·马勒执导的电影。</p>
 </blockquote>
-<h2 class="english-content header-en">High Agency in a Question</h2><h2 id="section-2">一个问题，看清“高能动性”</h2>
+<h2 id="section-2">一个问题，看清“高能动性”</h2>
 <p>假设你从一个第三世界国家的牢房里醒来。你只能给你认识的一个人打电话，让他把你弄出去。</p>
 <p><strong>你会打给谁？</strong></p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/678918facdf82c05770d9983_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F65ec8a5a-93a2-4344-a8a3-0331170d543f_964x544.avif" alt="Image"></p>
@@ -345,15 +315,15 @@ body.show-english .english-content {
 <p>你选中的这个人，身上有种东西。</p>
 <p>一股劲儿，一种只可意会、不可言传的特质。</p>
 <p><strong>这就是高能动性。</strong></p>
-<h2 class="english-content header-en">High Agency in a Meme</h2><h2 id="section-3">一图看懂“高能动性”</h2>
+<h2 id="section-3">一图看懂“高能动性”</h2>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3fa947a58efff1dd31_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F90c89583-02cd-45bf-865f-88bfaeefa40c_964x580.avif" alt="Image"></p>
-<h2 class="english-content header-en">High Agency in a Moment</h2><h2 id="section-4">高能动性：定格的瞬间</h2>
+<h2 id="section-4">高能动性：定格的瞬间</h2>
 <p>在汉堡的一场纳粹集会上，奥古斯特·兰德梅赛 (August Landmesser) 拒绝行纳粹礼。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3faeb6e13c734bf379_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fae61f21a-2550-4847-a91b-5d599a63803a_964x624.avif" alt="Image"></p>
-<h2 class="english-content header-en">Low Agency in a Moment</h2><h2 id="section-5">一个瞬间，暴露“低能动性”</h2>
+<h2 id="section-5">一个瞬间，暴露“低能动性”</h2>
 <p>早在我们给行李箱装上轮子之前，人类就已经登上了月球（这堪称高能动性的巅峰之举）。 那时，每个人都提着自己的行李箱——只因为其他所有人都这么做。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3fa90a95057f16c525_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fb5eb133b-f2ee-417b-b76a-bbd0a1c71a1f_1456x741.avif" alt="Image"></p>
-<h2 class="english-content header-en">How To Spot High Agency People</h2><h2 id="section-6">如何识别高能动性的人</h2>
+<h2 id="section-6">如何识别高能动性的人</h2>
 <ol>
 <li>
 <p><strong>拥有与众不同的青少年爱好</strong>
@@ -400,7 +370,7 @@ body.show-english .english-content {
 </li>
 </ol>
 <p>现在你已经亲眼见证了——让我们来试着解释它……</p>
-<h2 class="english-content header-en">The High Agency Spectrum</h2><h2 id="section-7">高能动性光谱</h2>
+<h2 id="section-7">高能动性光谱</h2>
 <p>那个在第三世界国家监狱里你会打电话求助的人，代表了你所认识的能动性最高的人，因为这是一个<strong>加强版的终极实战难题</strong>。</p>
 <p>你将一个看似无解的难题，抛给了那个要在现实世界里孤军奋战、且没有任何行动指南的人，但你依然把赌注押在了他身上，赌他能找到解决之道。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67dd565a4a80cdd9892e2254_67dbd2896d0dc50d9fc346fd_Xnip2025-03-20_16-31-36.avif" alt="img"></p>
@@ -430,7 +400,7 @@ body.show-english .english-content {
 <li>如果他们缺乏<strong>行动本能</strong>，他们的想法将永远停留在理论层面，无法付诸现实。</li>
 <li>如果他们缺乏<strong>不盲从的智慧</strong>，那么一旦有权威人士说“不”，他们就会轻易放弃、选择顺从。</li>
 </ul>
-<h2 class="english-content header-en">Do you have agency?</h2><h2 id="section-8">你，拥有能动性吗？</h2>
+<h2 id="section-8">你，拥有能动性吗？</h2>
 <p>你或许会像我一样追问自己：我拥有能动性吗？如果朋友们身陷“第三世界监狱困境”，他们会打电话给我吗？</p>
 <p><strong>坏消息是：低能动性，是我们大多数人的出厂设置。</strong></p>
 <p>你继承的大脑，是为了适应狩猎采集部落的匮乏环境而演化的；你所经历的教育体系，是为了给工业革命输送流水线工人而设计的。</p>
@@ -447,11 +417,11 @@ body.show-english .english-content {
 <p>这篇文章，我多希望自己是在18岁时读到——而不是在30岁时写下。</p>
 <p>现在，就让我们一起，<strong>一探“高能动性”的究竟</strong>。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67db5a63ec9c4112f3273ac2_67d7eb91bb594832cb2819c1_AD_4nXeOR4NQQCd-qGnJ23XBVF-GoxoCQCcBcFu-X7lxpEt87mHHtHa6YdYv0yuyBkA3HhwYUnknsCIFTSku6MLp-qft0YHuF8snOF-iAkK98vv5A1KWgWslMbcvBnWp1UdAM2_nH8AD1Q.avif" alt="img"></p>
-<h1 class="english-content header-en">Part 1 - High Agency Software</h1><h1></h1>
-<h1 class="english-content header-en">Part 2 - The Highest Agency Human Ever?</h1><h1 id="section-10"><strong>一、高能动性的“心智软件”</strong></h1>
+<h1></h1>
+<h1 id="section-10"><strong>一、高能动性的“心智软件”</strong></h1>
 <p>身处“高能动性光谱”顶端的人，不会从他人那里被动地“下载”自己的世界观。</p>
 <p>然而，他们中的许多人，都不约而同地在自己的“心智软件”里<strong>内置</strong>了五条相似的核心指令：</p>
-<h2 class="english-content header-en">Problem 1: They lived in the wrong location to fly</h2><h2 id="section-11">1. 世上无难事</h2>
+<h2 id="section-11">1. 世上无难事</h2>
 <p>人脑就是一台“答案生成器”。如果你问它：“我的生活中有哪些好事？”——它就会找出答案。如果你问它：“我的生活中有哪些坏事？”——它同样会找出答案。</p>
 <p>当面临一个难题时，问你的大脑：“这件事违背物理定律吗？”——它会回答“没有”，然后便会开始构想出各种<strong>天马行空的方案</strong>来让这件事成为可能。向你的大脑提出这个问题，能瞬间清空你脑中关于此事的思维白板，并叩开你沉睡创造力的大门。</p>
 <p>只要你的难题不违背物理定律，它就不是一个无法解决的难题——无论旁人怎么说。</p>
@@ -467,7 +437,7 @@ body.show-english .english-content {
 <p>物理学家戴维·多伊奇 (David Deutsch) 曾举过一个例子：假设一颗小行星将在一年后撞击地球。如果让企鹅来负责应对，你完全可以根据小行星的物理轨迹，计算出地球命运的固定概率。但如果由人类来负责，计算出固定的概率就变得不可能了。</p>
 <p>如果我们选择低能动性的路线，被动接受毁灭的命运，那么地球毁灭的概率就会增加。如果我们选择高能动性的路线，去建造能将小行星在太空中击毁的激光束，那么地球毁灭的概率就会降低。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67dd565affb37f1fd7f98f42_67dbd63eaf96e52e191fa0cc_Xnip2025-03-20_16-47-44.avif" alt="img"></p>
-<h2 class="english-content header-en">Problem 2: Kitty Hawk was 700 miles away from home.</h2><h2 id="section-12">2. 法无定法</h2>
+<h2 id="section-12">2. 法无定法</h2>
 <p>网球史上曾有一个特殊时刻：三位史上最伟大的选手——纳达尔、德约科维奇、费德勒——在同一个时代同场竞技。</p>
 <p>作家马修·萨伊德 (Matthew Syed) 讲述过一个精彩的故事，关于他在温布尔登网球公开赛前观看这三人热身的经历。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3f6838126bb0d7981f_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fe72d03e4-2465-414e-951d-8d2ea393fbfb_1080x809.avif" alt="Image"></p>
@@ -482,7 +452,7 @@ body.show-english .english-content {
 <p>（他撒了个谎——实际上花了他7年时间，但他想说得轻描淡写一些。）</p>
 <p>接着，科恩问鲍勃·迪伦：“你写《就像一个女人》(Just Like a Woman) 又花了多久？”</p>
 <p>迪伦回答说：“十五分钟。”</p>
-<h2 class="english-content header-en">Problem 3: Controlling The Airplane In The Air</h2><h2 id="section-13">3. 没有“大人”</h2>
+<h2 id="section-13">3. 没有“大人”</h2>
 <p>如果你深入挖掘低能动性思维的根源，你常常会发现一种潜在的信念，即世界上存在一个优于他们的、神一般的“大人”阶层。这是一种从童年时期就凝固了的、彼得·潘式的世界观。关于圣诞老人和牙仙子的虚构故事早已被戳穿，但那种认为世界由一群完美的“大人”掌控的信念却依然存在。</p>
 <p>低能动性陷阱之一，就是把这些“大人”捧上神坛，将有缺陷的凡人，变成了超凡入圣的神。</p>
 <p>如果你见过自己的偶像，或读过他们的传记，你就会发现超人也常常只是克拉克·肯特。是你脑中的电影制片厂，把这个不完美的凡人，放在了完美无瑕的神坛上。</p>
@@ -505,7 +475,7 @@ body.show-english .english-content {
 <p>费奥多尔·陀思妥耶夫斯基 (Fyodor Dostoevsky) 赌光了全部身家。为了筹集赌资，他签下了掠夺性的出版合同，并接受了不可能完成的交稿期限。他的妻子只得典当掉自己的婚戒和私人物品，来养活他们的孩子。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67dd565a8348c1c7eb2ffca5_67dba2d2f58e32ba02702c19_Fyodor-Dostoyevsky-1876.avif" alt="Fyodor Dostoyevsky | Biography, Books, Philosophy, &amp; Facts | Britannica"></p>
 <p>不要把任何“大人”捧上神坛。<strong>砸碎你的精神神像</strong>。一个更有用的信念是：那些“大人”不会来拯救你——因为他们根本就不存在。</p>
-<h2 class="english-content header-en">Problem 4 - Every existing engine was too heavy to take off the ground.</h2><h2 id="section-14">4. 没有“正常”</h2>
+<h2 id="section-14">4. 没有“正常”</h2>
 <p>扼杀高能动性的最大元凶之一，就是渴望变得“正常”：渴望融入群体，渴望被他人喜欢。</p>
 <p>这便引出了一个“常规悖论”：我们隐藏起自己的独特之处，去扮演“正常”的行为以博取群体的喜爱——但群体最终却会遗忘那些“正常”的行为。</p>
 <p>常规的行为在短期内无需付出任何代价，但最终会消失在记忆的深渊里。而非同寻常的、独特的行为在短期内需要付出代价——但这些行为在未来却会作为“故事资产”流传下去。</p>
@@ -518,7 +488,7 @@ body.show-english .english-content {
 <p>如果你为了博取群体的喜爱而隐藏自己独特的个性，请记住：<strong>他们很快就会忘记你所做或所说的一切</strong>。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67dd565a6dd75bc40e987f09_67dba480f78e5ed5d555f093_8bb82f3-b5a6-2a76-2c3-3a8c7f56803c_wait-but-why-graphic.avif" alt="Weekly Whispers #138"></p>
 <p><strong>平庸过眼云烟，不凡才被看见</strong>。</p>
-<h2 class="english-content header-en">The Vague Trap</h2><h2 id="section-15">5. 唯有当下</h2>
+<h2 id="section-15">5. 唯有当下</h2>
 <p>过去已不复存在——它只是于此刻浮现的一段记忆。</p>
 <p>未来也尚未到来——它只是于此刻构想的一场幻梦。</p>
 <p>人生，不过是无数个“当下”的串联。</p>
@@ -537,7 +507,7 @@ body.show-english .english-content {
 <p>没人能保证你不会在尖叫中死去。</p>
 <p>唯有当下。</p>
 <p>有一个人，就真正安装了这套“高能动性软件”：他或许是有史以来能动性最高的人……</p>
-<h1 class="english-content header-en">Part 4 - Turning Bullshit Into Reality</h1><h1 id="section-16">二、史上能动性最高的人？</h1>
+<h1 id="section-16">二、史上能动性最高的人？</h1>
 <p>来认识一下，威尔伯 (Wilbur)。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67db5a621739f9588d62e0a7_67db53d4092f508025d9573b_1884_Wilbur_age_17.avif" alt="img"></p>
 <p>时间回到1885年。那时的他18岁，家庭和睦，童年幸福，并且即将进入耶鲁大学，前途一片光明。</p>
@@ -570,21 +540,21 @@ body.show-english .english-content {
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3f4efdc9a8fc403134_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F257eb71b-2242-4730-a6e8-bbc2f90f840c_1080x1080.avif" alt="Image"></p>
 <p>威尔伯把这个想法分享给了他的弟弟奥维尔 (Orville)。他们没有沉溺于<strong>纸上谈兵</strong>，而是秉持着强烈的<strong>行动本能</strong>：“我们就在车库里开始造一架全尺寸的滑翔机吧。”</p>
 <p>无数个被社会视为无解的难题正等待着他们——但威尔伯和奥维尔发现，这些难题没有一个违背物理定律：</p>
-<h2 class="english-content header-en">The Turning Bullshit Into Reality Exercise</h2><h2 id="section-17">第1个问题1: 缺乏理想的试飞环境</h2>
+<h2 id="section-17">第1个问题1: 缺乏理想的试飞环境</h2>
 <p>通过逆向工程，他们计算出试飞需要时速15英里的大风和用于平稳着陆的沙丘，而这些条件在他们的家乡俄亥俄州都找不到。别忘了——那还是前互联网时代。他们不可能像今天一样用谷歌地图来寻找这个地方。</p>
 <p>**解决方案：**他们联系了美国国家气象局，获取了全美国所有地点的数据。在对这些数据指标进行筛选后，他们基于第一性原理最终确定：北卡罗来纳州的小鹰镇 (Kitty Hawk)，拥有最适合飞行的天气条件。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67dd565a10b6f487617a08a0_67dba6e9609d859c090988c6_jennettes-pier-nags-head-nc.avif" alt="Your Outer Banks Off-Season Guide - Kitty Hawk Kites Blog"></p>
-<h2 class="english-content header-en">Tool 1 - The High Agency Flow Chart</h2><h2 id="section-18">第2个问题: 横亘在前的700英里</h2>
+<h2 id="section-18">第2个问题: 横亘在前的700英里</h2>
 <p>威尔伯和奥维尔此前从未离开过家乡。那时也还没有美国航空早上10点的航班，能让他们轻松地飞越大半个国家。</p>
 <p>解决方案：没有丝毫犹豫，唯有行动本能。他们打包好滑翔机，在火车上颠簸了数日，然后在沙丘上搭起了帐篷。</p>
 <p>想象一下这个场景。你是小鹰镇一位名叫约翰的本地农夫，正带着你的狗在田间照常散步，这时你看到了这样一幅景象：两个来自遥远城市的兄弟，住在一顶帐篷里，整天都在模仿海鸥，做着这样的事：</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67dd565b705c9de3e4fa0ea5_67dbd476f41b802e24af496e_0320.gif" alt="img"></p>
 <p>当地人给威尔伯和奥维尔兄弟俩起了个外号，叫“那两个落魄的疯子”。</p>
-<h2 class="english-content header-en">Tool 2 - The Swedish House Mafia Technique</h2><h2 id="section-19">第3个问题: 如何实现空中操控</h2>
+<h2 id="section-19">第3个问题: 如何实现空中操控</h2>
 <p>解决方案：他们从鸟类那里“偷师”了翼弯曲控制技术，以便在飞行中改变机翼形状；并通过在他们自制的风洞（如下图）中测试200种不同的机翼构型，重建了整个空气动力学知识体系。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3fc8c9b1b0f22d2016_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F51f58946-15fa-4b25-a59a-8f6b6131c7e8_1280x726.avif" alt="Image"></p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3ffc1efc8ac7209fd6_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F8a69c8c6-bc5d-4f8c-b0d0-e0201decb35b_941x768.avif" alt="Image"></p>
-<h2 class="english-content header-en">Tool 3 - The Story Razor</h2><h2 id="section-20">第4个问题：缺乏轻便的动力源</h2>
+<h2 id="section-20">第4个问题：缺乏轻便的动力源</h2>
 <p>解决方案：他们精确计算出所需发动机的规格，然后亲手造了出来：一台仅重180磅的定制款铝制发动机。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3ff3cdaf0cb861d0c8_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Ffdd83519-beba-49fe-ba08-47997d75b023_1024x745.avif" alt="Image"></p>
 <p>就这样，威尔伯在“高能动性光谱”上一路狂飙，不断攻克着那些无解的难题。</p>
@@ -605,7 +575,7 @@ body.show-english .english-content {
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67db5a637f8bdfb93642d01a_67d00d5b94816bfdd9352277_https%25253A%25252F%25252Fsubstack-post-media.s3.amazonaws.com%25252Fpublic%25252Fimages%25252F09fba6c0-da04-4643-8c2a-05cf8531b23f_480x852.avif" alt="img"></p>
 <p>我们怎样才能让世上多一些威尔伯·莱特，少一些《纽约时报》那种充满犬儒气息的断言呢？</p>
 <p>答案是：逃离低能动性陷阱……</p>
-<h1 class="english-content header-en">Bonus Material: The High Agency Library</h1><h1 id="section-21">三、逃离低能动性陷阱</h1>
+<h1 id="section-21">三、逃离低能动性陷阱</h1>
 <p>要找到低能动性的根源，只需将“高能动性三轮车”的理念完全颠倒过来即可：</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67de3d75d0d30f0945e737b3_AD_4nXfcYjhJ5WcGUArYa89GrkUL0t4upuT8ktd89XINXeOgcxs9rB7vkkO6ua7wEacWICGey6CRNf6qnQmNPsIPVJj9gc9kvoapG8q2y-xzJw_QrGj7Nt-f5dtx4jB0NblxmaBuRVOSaw.avif" alt="img"></p>
 <p>而且，它无处不在。</p>
@@ -618,7 +588,7 @@ body.show-english .english-content {
 <p>如果你陷入了低能动性的陷阱，那么在这座牢笼里，你既是<strong>狱卒</strong>，也是<strong>囚徒</strong>。</p>
 <p>这座自我囚禁的牢笼，其围墙并非实体，而纯粹是<strong>由你的心念所造</strong>——你如何想象现实，现实便如何为你成型。</p>
 <p>低能动性的陷阱数不胜数。下面，我将列出其中最常见的五个，并附上可行的逃脱方案。</p>
-<h2 class="english-content header-en">A Truck Driver and a Photocopying Machine</h2><h2 id="section-22">1. 目标混沌陷阱</h2>
+<h2 id="section-22">1. 目标混沌陷阱</h2>
 <p>如果你身陷“第三世界监狱困境”，然后发短信向一个陷入“目标混沌的陷阱”的人求助——他们很可能会这样回复：</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/681d332211e6fa0325b87b48_9e0f9281-0669-4627-9297-eb0d84550316.jpg" alt="img"></p>
 <p>“目标混沌陷阱”通过从不清晰地定义问题，来回避动用能动性，更遑论找到解决方案了。它以那些模糊、空泛、不着边际的念头为食。</p>
@@ -640,7 +610,7 @@ body.show-english .english-content {
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/6839aef6d93a7d08ca49628f_5dc97530e94e8676c200a255.jpeg" alt="Walt Disney's Strategy in 1957 Drawing - Business Insider"></p>
 <p>克里斯托弗·诺兰 (Christopher Nolan) 为电影《盗梦空间》(Inception) 绘制的情节图：</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67db5a62b7e369390daf67af_67d7f07db4e862e8411af7d2_AD_4nXcEp4y2IcftSq2wgf9Oxb9DNCKFipizpYEXVuVBiJJH6rgwv-tOI8tUv2eBNqSAsD91i4mxpYu08texsyaOKGWhA5k7cmVoxbVbfhnxOYys-PM9w7imXcxIofWhOZR6g8kr94VsRw.avif" alt="img"></p>
-<h2 class="english-content header-en">A Curious 6-Year Old Watching Warren Buffett Videos</h2><h2 id="section-23">2. 中智”陷阱</h2>
+<h2 id="section-23">2. 中智”陷阱</h2>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3f17dc36a702f8f3dd_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F0a175c97-cb4b-4e63-9c50-06c3b5fbc8ff_960x1391.avif" alt="Image"></p>
 <p>中智陷阱，在于将能动性过度复杂化。它源自那张著名的“Midwit陷阱”梗图：那个位于钟形曲线中间、令人头疼的家伙。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67c55d3f5cf0a3641c5cb494_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252Fb6ad71f0-bd1b-48b7-9853-e80dba357065_675x499.avif" alt="Image"></p>
@@ -662,7 +632,7 @@ body.show-english .english-content {
 <li><strong>持续地写。</strong></li>
 <li><strong>写那些能让你兴奋的东西。</strong></li>
 </ul>
-<h2 class="english-content header-en">Crack Addict Urgency</h2><h2 id="section-24">3. 执念”陷阱</h2>
+<h2 id="section-24">3. 执念”陷阱</h2>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67db5a6204a5434870b973a2_67d7f07dc8944395c6cab70a_AD_4nXcquziFQSLCzaOrFyftVzl7Rjn1bKrO3Gui9sGChVvY4L1rDOck9SMBk6OnXtWXLabyckRQ9za4pnGvA8-6gucWYjSHYFKnJ5E1HiG7vCpMPIkoXQfoyEqAs_oz4YcpRpYoXtMu7A.avif" alt="img"></p>
 <p>“执念”陷阱，在于你被过往的假设束缚得太紧，以至于看不到新的、更高能动性的选项。你就变成了那个<strong>手里拿着锤子、看什么都像钉子</strong>的人。</p>
 <p>世上最烈性的三种精神药物是：DMT（二甲基色胺）、冰毒，以及<strong>惯性</strong>。</p>
@@ -674,7 +644,7 @@ body.show-english .english-content {
 <p>保安可能会说，你今晚不能进去。你可以将这句社交套话<strong>奉为圣旨</strong>——或者，你也可以问自己：“如果我的能动性是现在的十倍，我会怎么做？”然后，静观各种创意点子涌入你的脑海。你可以贿赂保安，从后门溜进去，联系场地老板，换一套行头伪装自己，或者叫上朋友们搬来一整套摄影设备，假装是娱乐媒体正在抓拍一线明星被俱乐部拒之门外的独家新闻。</p>
 <p>再想象一下，你有一个邪恶的双胞胎，他存在的唯一目的，就是拥有你十倍的能动性。他会想出些什么主意？这个思想实验，能让你的大脑去探索那些你连想都不敢想的创意。</p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67de4403538aa96accf0c7d8_GA1cqxMbwAA6MXX.avif" alt="image" title="Pro tip: It helps if your 10x agency twin has glasses and a moustache"></p>
-<h2 class="english-content header-en">The Most High Agency Person You’ve Never Heard Of</h2><h2 id="section-25">4. 精神内耗”陷阱</h2>
+<h2 id="section-25">4. 精神内耗”陷阱</h2>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67db5a63595f66059be25503_67d7f16a1ae94b21c219a062_AD_4nXfYzZUdf2PvxDy2XIHQ0cJhgro5NnHjQfUn3JQfq8LqcjrvYDVk9zjKmM0vc-8CDiEStVKzdI0znthYvRVv6sr6UfJe8nIRwi4lLJqf1aEA-wOschvzV7dpbO5ZlL5vPrVmHqEDsA.avif" alt="img"></p>
 <p>“精神内耗”陷阱会彻底冻结你的能动性。它让你陷入“万一搞砸了怎么办？”的永无止境的循环之中。</p>
 <p>这就好比你穷尽一生，迷失在网飞（Netflix）那琳琅满目的片单中，反复权衡，却始终因为找不到那个最完美的选项，而<strong>从未按下播放键</strong>。沉溺于反刍的完美主义者不断地<strong>拖延决策</strong>，因为他们找不到那个毫无风险的完美选项——最终只会发现，<strong>问题已堆积如山，而自己却已无路可走。</strong></p>
@@ -694,7 +664,7 @@ body.show-english .english-content {
 <p>在你花费五年时间，为“去不去纽约”这个理论问题而内耗时，你本可以收集到关于纽约、洛杉矶、里约热内卢、东京、悉尼、伦敦和雷克雅未克的<strong>鲜活的一手生活数据</strong>了。</p>
 <p><span class="video-placeholder" data-url="https://youtu.be/NqVoOC2azZI"> [YouTube视频: 点击跳转观看] </span></p>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/681d322910d035c188b35bea_image.avif" alt="Comparison showing the ‘This Is Fine’ meme on the low agency side and YouTube fitness tutorials on the high agency side — illustrating self-awareness and proactive problem-solving."></p>
-<h2 class="english-content header-en">Renaming The Universe From Staring At Your Child’s Poster</h2><h2 id="section-26">5. 望而生畏”陷阱</h2>
+<h2 id="section-26">5. 望而生畏”陷阱</h2>
 <p><img src="https://cdn.prod.website-files.com/67891452634f936deafd719a/67db5a63c12ef868a98c68cd_67d7f16ad7cfaf80b64369e1_AD_4nXfGD867HMBeKdTzpI2B3L_d4bDP8-lhzSibJbpMnpuowVRhNx9-dQAO8RkbI7ICbZzedXfpOevbiS_bUQc89a0xbJzzrtKsJ-xudXVnHxtG5R82s9uXqG3OYRmppaCgSXVqjtCCkw.avif" alt="img"></p>
 <p><strong>“望而生畏”的陷阱会彻底麻痹你的能动性。</strong> 任务艰巨得让你不知从何下手，你被眼前那浩如烟海的潜在行动给彻底淹没了。</p>
 <ul>
@@ -720,7 +690,7 @@ body.show-english .english-content {
 <p>以此类推。</p>
 <p>“第一级”永远是一个足够简单的、不会让你望而生畏的行动。“第二级”则帮你规划出游戏的后续关卡。然后，“砰”的一声，你已经升到第三级了。<strong>去尽情享受那多巴胺飙升的快感吧</strong>，然后看着那种“望而生畏”的感觉烟消云散。</p>
 <p>现在，让我们开始与现实交手……</p>
-<h1 class="english-content header-en">Changelog</h1><h1 id="section-27">四、化吹牛为真实</h1>
+<h1 id="section-27">四、化吹牛为真实</h1>
 <p>这是全文最短的一个章节，因为现在，轮到你亲自去攀登“高能动性光谱”了。</p>
 <p>请记住：不要把我捧上神坛。</p>
 <p>我不过是一颗让卵子受精的精子，赤条条地哭喊着来到这个世界，没有半分自我；从周遭的人那里“下载”了一套模仿来的行为模式，被青春期的荷尔蒙冲昏了头脑——而如今，也只是在键盘上敲敲打打，假装自己是个“大人”。</p>
@@ -867,8 +837,10 @@ body.show-english .english-content {
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Auto-spacing for Chinese/English mixed text
       pangu.spacingElementByClassName('article-container');
 
+      // External link confirmation
       document.querySelectorAll('.video-placeholder, .social-placeholder').forEach(el => {
         el.addEventListener('click', (e) => {
           const url = el.getAttribute('data-url');
@@ -878,14 +850,6 @@ body.show-english .english-content {
         });
       });
     });
-
-    function toggleEnglish() {
-      const body = document.body;
-      const checkbox = document.getElementById('englishToggle');
-      if (event.target !== checkbox && !event.target.classList.contains('slider')) checkbox.checked = !checkbox.checked;
-      if (checkbox.checked) body.classList.add('show-english');
-      else body.classList.remove('show-english');
-    }
   </script>
 </body>
 </html>

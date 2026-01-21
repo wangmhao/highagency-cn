@@ -8,12 +8,7 @@ const md = new MarkdownIt({
   typographer: true
 });
 
-// Helper for English detection
-function isEnglish(text) {
-  if (!text) return false;
-  return !/[\u4e00-\u9fa5]/.test(text);
-}
-
+// Link configuration
 const defaultRender = md.renderer.rules.link_open || function(tokens, idx, options, env, self) {
   return self.renderToken(tokens, idx, options);
 };
@@ -24,58 +19,17 @@ md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
 };
 
 async function buildFinal() {
-  console.log('Building Final Site...');
+  console.log('Building Clean Chinese Version...');
 
   try {
     const markdown = await fs.readFile('final_cn.md', 'utf-8');
-    const sourceMarkdown = await fs.readFile('High Agency What It Is, How to Get It, and Why It Matters 高能动性：是什么，如何获得，以及为什么重要.md', 'utf-8');
     const css = await fs.readFile('style_replica.css', 'utf-8');
 
-    // 1. Prepare English Headers from Source
-    const sourceHtml = md.render(sourceMarkdown);
-    const $source = cheerio.load(sourceHtml);
-    const englishHeaders = [];
-
-    $source('h1, h2, h3').each((i, el) => {
-        const text = $source(el).text().trim();
-        if (isEnglish(text)) {
-            englishHeaders.push({
-                tag: el.tagName.toLowerCase(),
-                text: text,
-                html: $source(el).html()
-            });
-        }
-    });
-    console.log(`Found ${englishHeaders.length} English headers.`);
-
-    // 2. Render Target (Chinese)
+    // 1. Render Markdown
     const contentHtml = md.render(markdown);
     const $ = cheerio.load(contentHtml);
 
-    // 3. Inject English Headers (Best Effort)
-    let headerCursor = 0;
-    $('h1, h2, h3').each((i, el) => {
-        const $el = $(el);
-        const tag = el.tagName.toLowerCase();
-
-        // Find next matching header in English list
-        let match = null;
-        for(let j=0; j<10; j++) {
-            if (headerCursor + j >= englishHeaders.length) break;
-            if (englishHeaders[headerCursor + j].tag === tag) {
-                match = englishHeaders[headerCursor + j];
-                headerCursor = headerCursor + j + 1;
-                break;
-            }
-        }
-
-        if (match) {
-            // Inject!
-            $el.before(`<${match.tag} class="english-content header-en">${match.html}</${match.tag}>`);
-        }
-    });
-
-    // 4. Handle YouTube/X Links
+    // 2. Handle YouTube/X Links (Safety Placeholders)
     $('a').each(function() {
         const href = $(this).attr('href');
         if (!href) return;
@@ -87,28 +41,15 @@ async function buildFinal() {
         }
     });
 
-    // 5. Image Notes/Captions (Heuristic)
-    // User said "Notes below images".
-    // We assume if a <p> follows an image <p>, and text starts with '>', it might be a note.
-    // Or just simple text.
-    // Let's add a class to all paragraphs following images to allow CSS styling if needed.
-    // Actually, user said "show them". They are shown by default.
-    // We just ensure they look okay.
-
-    // 6. Sidebar TOC
+    // 3. Generate Sidebar TOC
     const tocItems = [];
-    // We want to link to the CHINESE headers, which are the ones in the document flow.
-    // The English ones are injected before them.
-    $('h1, h2, h3').not('.english-content').each(function(i, el) {
+    $('h1, h2, h3').each(function(i, el) {
         const text = $(this).text().trim();
         if (!text) return;
         const tagName = el.tagName.toLowerCase();
         const id = `section-${i}`;
 
-        // If English header was injected before, it's a separate element.
-        // We ID the Chinese one.
         $(this).attr('id', id);
-
         tocItems.push({ text, id, level: tagName });
     });
 
@@ -127,7 +68,7 @@ async function buildFinal() {
     });
     sidebarHtml += `</ul></div>`;
 
-    // 7. Assemble
+    // 4. Assemble HTML
     const processedContent = $('body').html();
     const finalHtml = `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -137,6 +78,8 @@ async function buildFinal() {
   <title>High Agency: 高能动性 (中文精译版)</title>
   <style>
     ${css}
+
+    /* Embed Placeholders */
     .video-placeholder, .social-placeholder {
       display: inline-block;
       background: #f5f5f5;
@@ -148,46 +91,14 @@ async function buildFinal() {
       cursor: pointer;
       margin: 0 4px;
     }
-    .english-content {
-      display: none;
-      color: #888;
-      font-family: "Inter", sans-serif;
+    .video-placeholder:hover, .social-placeholder:hover {
+      background: #eee;
+      color: #333;
     }
-    .header-en {
-        margin-bottom: 5px !important;
-        margin-top: 2em !important;
-        border-bottom: none !important;
-        font-size: 0.8em !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    body.show-english .english-content {
-        display: block;
-    }
-    /* Toggle Switch */
-    .toggle-wrapper {
-        position: fixed; top: 20px; right: 30px; z-index: 1000;
-        background: var(--bg-color); border: 1px solid rgba(0,0,0,0.1);
-        padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
-    .switch input { opacity: 0; width: 0; height: 0; }
-    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 20px; }
-    .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 2px; bottom: 2px; background-color: white; transition: .4s; border-radius: 50%; }
-    input:checked + .slider { background-color: #000; }
-    input:checked + .slider:before { transform: translateX(20px); }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
 </head>
 <body>
-  <div class="toggle-wrapper" onclick="toggleEnglish()">
-    <span style="font-size: 0.8rem; font-weight: 600;">EN / 中文</span>
-    <label class="switch">
-      <input type="checkbox" id="englishToggle">
-      <span class="slider"></span>
-    </label>
-  </div>
 
   <div class="layout">
     ${sidebarHtml}
@@ -203,8 +114,10 @@ async function buildFinal() {
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Auto-spacing for Chinese/English mixed text
       pangu.spacingElementByClassName('article-container');
 
+      // External link confirmation
       document.querySelectorAll('.video-placeholder, .social-placeholder').forEach(el => {
         el.addEventListener('click', (e) => {
           const url = el.getAttribute('data-url');
@@ -214,20 +127,12 @@ async function buildFinal() {
         });
       });
     });
-
-    function toggleEnglish() {
-      const body = document.body;
-      const checkbox = document.getElementById('englishToggle');
-      if (event.target !== checkbox && !event.target.classList.contains('slider')) checkbox.checked = !checkbox.checked;
-      if (checkbox.checked) body.classList.add('show-english');
-      else body.classList.remove('show-english');
-    }
   </script>
 </body>
 </html>`;
 
     await fs.writeFile('index.html', finalHtml);
-    console.log('Successfully built index.html');
+    console.log('Successfully built index.html (Clean Chinese Version)');
 
   } catch (error) {
     console.error('Build failed:', error);
