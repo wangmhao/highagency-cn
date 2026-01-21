@@ -76,6 +76,7 @@ async function buildFinal() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>High Agency: 高能动性 (中文精译版)</title>
+  <link rel="icon" type="image/png" href="./avatar_small.png">
   <style>
     ${css}
 
