@@ -99,12 +99,12 @@ async function buildFinal() {
 
     /* Reading Progress Bar */
     .progress-container {
-      width: 100%;
+      width: calc(100% - 280px); /* Subtract sidebar width */
       height: 4px;
       background: transparent;
       position: fixed;
       top: 0;
-      left: 0;
+      left: 280px; /* Start after sidebar */
       z-index: 9999;
     }
     .progress-bar {
@@ -112,6 +112,14 @@ async function buildFinal() {
       background: #0070f3; /* Vercel/HighAgency Blue */
       width: 0%;
       transition: width 0.1s;
+    }
+
+    /* Responsive adjustments for progress bar */
+    @media (max-width: 900px) {
+      .progress-container {
+        width: 100%;
+        left: 0;
+      }
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js"></script>
