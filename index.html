@@ -18,30 +18,69 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "High Agency: 高能动性 (中文精译版)",
-    "image": ["https://cdn.prod.website-files.com/67891452634f936deafd719a/678918facdf82c05770d9983_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F65ec8a5a-93a2-4344-a8a3-0331170d543f_964x544.avif"],
-    "datePublished": "2024-03-20T08:00:00+08:00",
-    "dateModified": "2026-01-21T04:37:44.396Z",
-    "author": [{
-        "@type": "Person",
-        "name": "George Mack",
-        "url": "https://www.highagency.com/"
-    }],
-    "translator": {
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://highagency.cn/#website",
+        "url": "https://highagency.cn/",
+        "name": "High Agency (中文精译版)",
+        "description": "关于高能动性(High Agency)的深度解析与实战指南",
+        "publisher": {
+          "@id": "https://highagency.cn/#organization"
+        },
+        "inLanguage": "zh-CN"
+      },
+      {
         "@type": "Organization",
+        "@id": "https://highagency.cn/#organization",
         "name": "HighAgency.cn",
-        "url": "https://highagency.cn"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "HighAgency.cn",
+        "url": "https://highagency.cn",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://highagency.cn/avatar_small.png"
+          "url": "https://highagency.cn/avatar_small.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://github.com/wangmhao/highagency-cn"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.highagency.com/#george-mack",
+        "name": "George Mack",
+        "url": "https://www.highagency.com/",
+        "sameAs": [
+          "https://twitter.com/george__mack",
+          "https://www.linkedin.com/in/george-mack"
+        ],
+        "jobTitle": "Writer & Marketer",
+        "knowsAbout": ["High Agency", "Marketing", "Mental Models"]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://highagency.cn/#article",
+        "headline": "High Agency: 高能动性 (中文精译版)",
+        "description": "高能动性(High Agency)可能是21世纪最重要的思想。它不是关于天赋或运气，而是关于一种不仅被动体验世界，更能主动重塑世界的能力。",
+        "image": "https://cdn.prod.website-files.com/67891452634f936deafd719a/678918facdf82c05770d9983_https%253A%252F%252Fsubstack-post-media.s3.amazonaws.com%252Fpublic%252Fimages%252F65ec8a5a-93a2-4344-a8a3-0331170d543f_964x544.avif",
+        "datePublished": "2024-03-20T08:00:00+08:00",
+        "dateModified": "2026-01-22T03:49:36.379Z",
+        "author": {
+          "@id": "https://www.highagency.com/#george-mack"
+        },
+        "publisher": {
+          "@id": "https://highagency.cn/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://highagency.cn/#website"
+        },
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://highagency.cn/"
         }
-    },
-    "description": "高能动性(High Agency)是关于一种不仅被动体验世界，更能主动重塑世界的能力。本文详细解析了什么是高能动性、如何识别它、以及如何通过5个核心心智模型来获得它。"
+      }
+    ]
   }
   </script>
 
